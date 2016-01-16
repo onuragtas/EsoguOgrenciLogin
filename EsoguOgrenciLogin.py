@@ -4,6 +4,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
+import getpass
 from contextlib import contextmanager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import staleness_of
@@ -12,7 +13,7 @@ class EsoguLogin(unittest.TestCase):
     def setUp(self):
         # Get username and password
         self.username = input('Ogrenci Numaraniz: ')
-        self.password = input('Sifre: ')
+        self.password = getpass.getpass('Sifre: ')
 
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(5)
